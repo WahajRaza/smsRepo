@@ -1,0 +1,42 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<?init class="sm.AuthenticationInit"?>
+<zk>
+
+<div height="100%" >
+	<template name="layout" src="/layout/template.zul"/>
+	<apply template="layout"/>
+	<template name="center" >
+		<hbox vflex="1" hflex="1" align="center"
+			pack="center"  sclass="loginbg">
+			<vlayout sclass="loginForm" >
+				<div id="loginWin" hflex="max" align="center" apply="sm.LoginController" >				
+					<vbox hflex="max" align="center">
+						<grid hflex="min">
+							<columns>
+								<column hflex="min" align="right" />
+								<column />
+							</columns>
+							<rows>
+								<row>
+									Account :
+									<textbox id="account" width="200px" />
+								</row>
+								<row>
+									Password :
+									<textbox id="password" type="password"
+										width="200px" />
+								</row>
+							</rows>
+						</grid>
+						<label id="message" sclass="warn" value="&#160;" />
+						<button id="login" label="Login" />
+						
+					</vbox>
+				</div>
+				(use account='wahaj@gmail.com' and password='123' to login)
+			</vlayout>
+		</hbox>
+	</template>
+</div>
+</zk>

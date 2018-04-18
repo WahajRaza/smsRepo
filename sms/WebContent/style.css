@@ -1,0 +1,170 @@
+.banner {
+	background-color: #0080c0;
+}
+
+.banner-head {
+	font-size: 1.5em;
+	color: white;
+}
+
+.textbox{
+	width:180px;
+}
+
+.banner-image {
+	margin: 5px;
+	height: 50px;
+	box-shadow: inset 0px 0px 0px 25px #e8f5ff !important;
+    border-radius: 24% !important;
+}
+.imgbutton {
+    min-height: 30px; 
+    min-width:30px;
+    margin:5px 0px 5px 3px;
+    padding:0px; !important
+}
+
+.zspan{
+	float:right;
+	color:gray;
+}
+.imgbutton img {
+    vertical-align: middle;
+    max-width: 25px;
+    max-height: 25px; !important
+}
+.banner .logout {
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: 1.0em;
+	font-weight: bolder;
+	align: right;
+	color: white;
+}
+
+.banner .logoutContainer {
+	margin: 10px;
+}
+
+.loginForm {
+	background: rgba(255, 255, 255, 0.7) !important;
+	border: 1px solid black;
+	padding: 20px 10px;
+	box-shadow: 0px 0px 5px 1px black;
+}
+.z-tabbox-accordion .z-tabpanel>.z-tabpanel-content {
+    padding: 0px; !important
+}
+.z-center-body {
+	padding: 0px;
+}
+.z-tabbox {
+    border: 0px solid #d9d9d9 !important;
+}
+.z-listbox-body {
+	height: 91%;
+	!
+	important
+}
+.delete{
+    background-color:red; 
+    color:white;
+}
+.edit{
+    background-color:	#32CD32; 
+    color:white;
+}
+.submitButton {
+	font: bold;
+	margin: 10px;
+	font-size: 20px;
+	width: 150px;
+}
+
+.loginbg {
+	background: url('imgs/bg.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.footer {
+	background-color: #0080c0;
+	color: white;
+	font-size: 0.5em;
+	padding: 5px;
+}
+
+.z-south-body {
+	padding: 0px;
+}
+
+.footer a, .footer a:VISITED {
+	color: white;
+}
+
+.sidebar a, .sidebar a:VISITED {
+	color: black;
+	text-decoration: none;
+}
+
+.sidebar-fn {
+	cursor: pointer;
+}
+
+.head1 {
+	font-size: large;
+}
+
+.head2 {
+	font-size: medium;
+}
+
+.row-title .z-label {
+	font-weight: bold;
+	color: #636363;
+}
+.fn-caption .z-caption-l {
+	font-weight: bold;
+	font-size: medium;
+	color: #636363;
+}
+
+.complete-todo .z-label {
+	text-decoration: line-through;
+}
+
+.warn {
+	color: red;
+}
+
+.logout {
+	align: right;
+}
+
+.demo-main a, .demo-main a:VISITED {
+	color: #636363;
+	text-decoration: underline;
+	font-size: smaller;
+}
+
+.todo-box {
+	padding-right: 4px;
+}
+
+.z-north-body {
+	padding: 0px !important
+}
+
+.statusBar {
+	height: 15px;
+	background;
+}
+
+.breadcrumb {
+	padding: 20px;
+}
+
+.breadcrumb>button {
+	float:right;
+	margin-top:-10px;
+}

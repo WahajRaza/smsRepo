@@ -1,0 +1,44 @@
+.horizontal, .vertical {
+	height: 100%;
+	background-color: white;
+}
+.z-navbar {
+	position: absolute;
+	background-color: white;
+}
+.z-navbar-horizontal li {
+ 	min-width: 145px;
+}	
+.z-navbar-vertical {
+	width: 200px;
+	color:black;
+	height: 100%;
+}	
+
+.z-navbar-vertical.z-navbar-collapsed {
+	width: inherit;
+}	
+.z-navbar-horizontal.z-navbar-collapsed {
+	width: 580px;
+}
+.content {
+	padding: 0px  0px 22px;
+}
+.z-center-body{
+	padding:0px !important;
+}
+.vertical .content {
+	padding-left: 220px;
+}
+.vertical .content.collapsed {
+	padding-left: 75px;
+}
+.horizontal .content {
+	padding-top: 50px;
+}
+.content .title {
+	margin: 0;
+}
+.content .subTitle {
+	margin: 0;
+}

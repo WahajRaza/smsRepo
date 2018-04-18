@@ -1,0 +1,69 @@
+<zk xmlns:x="xhtml">
+	<div apply="fee_module.FeeDetailController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div vflex="min" hflex="min" id="form">
+			<grid>
+				<columns>
+					<column hflex="min" />
+					<column hflex="1" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Fee Id " width="150px" />
+						<intbox id="fid" disabled="true" sclass="textbox"
+							tabindex="1"/>
+					</row>
+					<row>
+						<label value="Fee Type " width="150px" />
+						<combobox id="ft" tabindex="2" autodrop="true"
+							readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<label value="Status" width="150px" />
+						<hlayout>
+							<checkbox id="dstatus" label="IsActive"
+								tabindex="3" />
+						</hlayout>
+					</row>
+					<row>
+						<label value="Search Key " width="150px" />
+						<textbox id="dvalue" sclass="textbox"
+							tabindex="4" />
+					</row>
+				</rows>
+			</grid>
+			<button label="Submit" sclass="submitButton" id="submit"/>
+		</div>
+		<div id="data" visible="false" height="90%">
+			<listbox id="Listbox" forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No user found in the result">
+				<listhead>
+					<listheader label="Fee Type" />
+					<listheader label="Status" />
+					<listheader label="Search Key" />
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.fee_type}"></listcell>
+						<listcell label="${each.dstatus}"></listcell>
+						<listcell label="${each.dvalue}"></listcell>
+						<listcell>
+							<button forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+		</div>
+</zk>

@@ -1,0 +1,23 @@
+<zk xmlns:x="xhtml">
+	<style>
+		.nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+		.nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+		.nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+		.nav_category { cursor:pointer; } .nav_text { color: #696569;
+		font-size : 24px; font-weight: bold;}
+	</style>
+	<tabbox width="100%" sclass="nav_tabs" >
+		<tabs id="tabs">
+			<tab label="Academic Period" id = "tab_ap"/>
+			<tab label="Period Details" id = "tab_pd"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<include id="ap" src="/pages/period_module/academic_period.zul"></include>
+			</tabpanel>
+			<tabpanel>
+				<include id="pd" src="/pages/period_module/period_details.zul"></include>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

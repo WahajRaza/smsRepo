@@ -1,0 +1,104 @@
+<zk xmlns:x="xhtml">
+	<div apply="fee_module.FeeGenController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div vflex="min" hflex="min" id="form">
+			<grid>
+				<columns>
+					<column hflex="min" />
+					<column hflex="1" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Fee Master" width="150px" />
+						<intbox id="fgid" tabindex="1" sclass="textbox"
+							disabled="true" />
+					</row>
+					<row>
+						<label value="Fee Detail Id" width="150px" />
+						<intbox id="fgdid" tabindex="2" sclass="textbox"
+							disabled="true" />
+					</row>
+					<row>
+						<label value="Fee Type" width="150px" />
+						<textbox id="fgtid" tabindex="3"
+							sclass="textbox" disabled="true" />
+					</row>
+					<row>
+						<label value="Student Master Id" width="150px" />
+						<combobox id="fgsid" tabindex="4"
+							autodrop="true" readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<label value="Fee Amount" width="150px" />
+						<intbox id="fee_amount" sclass="textbox"
+							tabindex="5" />
+
+					</row>
+					<row>
+						<label value="Discount Amount" width="150px" />
+						<intbox id="dis_amount" sclass="textbox"
+							tabindex="6" />
+
+					</row>
+					<row>
+						<label value="Recieved Amount" width="150px" />
+						<intbox id="rec_amount" sclass="textbox"
+							tabindex="7" />
+
+					</row>
+					<row>
+						<label value="Status" width="150px" />
+						<hlayout>
+							<checkbox id="fgstatus" label="IsActive"
+								tabindex="8" />
+						</hlayout>
+					</row>
+					<row>
+						<label value="Search Key" width="150px" />
+						<textbox id="fgvalue" sclass="textbox"
+							tabindex="9" />
+
+					</row>
+				</rows>
+			</grid>
+			<button label="Submit" sclass="submitButton" id="submit" />
+		</div>
+		<div id="data" visible="false" height="90%">
+			<listbox id="Listbox" forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No user found in the result">
+				<listhead>
+					<listheader label="Student" />
+					<listheader label="Fee Amount" />
+					<listheader label="Discount Amount" />
+					<listheader label="Recieved Amount" />
+					<listheader label="Status" />
+					<listheader label="Search Key" />
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.fgsm}"></listcell>
+						<listcell label="${each.f_amount}"></listcell>
+						<listcell label="${each.dis_amount}"></listcell>
+						<listcell label="${each.rec_amount}"></listcell>
+						<listcell label="${each.fgstatus}"></listcell>
+						<listcell label="${each.fgvalue}"></listcell>
+						<listcell>
+							<button forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</zk>

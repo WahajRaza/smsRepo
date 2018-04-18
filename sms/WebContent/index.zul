@@ -1,0 +1,11 @@
+<?link rel="stylesheet" type="text/css" href="/style.css"?>
+<?init class="sm.AuthenticationInit"?>
+<zk>
+<div height="100%">
+	<template name="layout" src="/layout/template.zul" />
+	<apply template="layout"/>
+	<template name="center">
+		<include id="mainInclude" src="/home.zul"/>
+	</template>
+</div>
+</zk>

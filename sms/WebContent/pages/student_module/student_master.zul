@@ -1,0 +1,104 @@
+<zk xmlns:x="xhtml">
+<div apply="student_module.StudentController" hflex="max">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div id="form" vflex="min" hflex="max" >
+	<grid hflex="max" vflex="min" >
+		<columns>
+			<column hflex="min" align="right"/>
+			<column hflex="min" />
+			<column hflex="min" align="right"/>
+			<column hflex="min"/>
+		</columns>
+		<rows>
+			<row>
+				<label value="Student Name :"/>
+				<hbox>
+				<textbox  id="name" tabindex="1" sclass="textbox" constraint="no empty"/>
+				<label value="*" style="color:red" /></hbox>
+				<label value="Address :" />
+				<textbox  id="address" tabindex="3" sclass="textbox"/>
+			</row>
+			<row>
+			<label value="Registration Number :" />
+				<hbox>
+				<textbox id="reg" tabindex="2" sclass="textbox" constraint="no empty"/>
+				<label value="*" style="color:red" /></hbox>
+				
+				<label value="Town :" />
+				<textbox  id="town" tabindex="4" sclass="textbox"/>
+			</row>
+			<row>
+				<label value="City :" />
+				<textbox id="city"
+					maxlength="15" tabindex="5" sclass="textbox"/>
+				<label value="LandLine :" />
+				<textbox  id="landline" tabindex="6" sclass="textbox"/>
+			</row>
+			<row>
+				<label value="Cell Number :" />
+				<textbox  id="cell_no" tabindex="7" sclass="textbox"/>
+				<label value="Joining Class :" />
+				<textbox id="jclass"
+					maxlength="15" tabindex="8" sclass="textbox"/>
+			</row>
+			<row>
+				<label value="Admission Date :" />
+				<datebox  id="adm_date" tabindex="9" sclass="textbox"/>
+			</row>
+			<row>
+				<label value="Status :" />
+				<checkbox id="status" label="IsActive" tabindex="10" />
+				<label value="Search Key :" width="150px" />
+				<textbox id="value" tabindex="11" sclass="textbox"/>
+			</row>
+		</rows>
+	</grid>
+	<button label="Submit" sclass="submitButton" id="submit"/>
+	</div>
+	<div id="data" visible="false" height="90%">
+			<listbox id="Listbox" forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No Student found in the result" >
+				<listhead >
+					<listheader label="Student Name" hflex="min" align="center"/>
+					<listheader label="Registration" hflex="min" align="center"/>
+					<listheader label="Address" hflex="min" align="center"/>
+					<listheader label="Town" hflex="min" align="center"/>
+					<listheader label="City" hflex="min" align="center"/>
+					<listheader label="Landline" hflex="min" align="center"/>
+					<listheader label="Contact" hflex="min" align="center"/>
+					<listheader label="Joining Class" hflex="min" align="center"/>
+					<listheader label="Admission Date" hflex="min" align="center"/>
+					<listheader label="Active" hflex="min" align="center"/>
+					<listheader label="Search Key" hflex="min" align="center"/>
+					<listheader label="Edit/Delete" hflex="min" align="right"/>
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.name}"></listcell>
+						<listcell label="${each.reg_no}"></listcell>
+						<listcell label="${each.address}"></listcell>
+						<listcell label="${each.town}"></listcell>
+						<listcell label="${each.city}"></listcell>
+						<listcell label="${each.landline}"></listcell>
+						<listcell label="${each.cell_no}"></listcell>
+						<listcell label="${each.jclass}"></listcell>
+						<listcell label="${each.admission}"></listcell>
+						<listcell label="${each.status}"></listcell>
+						<listcell label="${each.value}"></listcell>
+						<listcell>
+							<button
+								forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button
+								forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</zk>

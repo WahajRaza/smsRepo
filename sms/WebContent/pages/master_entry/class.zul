@@ -1,0 +1,63 @@
+<zk xmlns:x="xhtml">
+	<div apply="master.ClassController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div id="form" vflex="min" hflex="max" visible="true">
+			<grid id="parent">
+				<columns>
+					<column hflex="min" align="right" />
+					<column hflex="min" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Class Name :" width="150px" />
+						<hbox>
+						<textbox id="name" sclass="textbox" placeholder="e.g:[One]"
+							tabindex="1" constraint="no empty"/>
+						<label value="*" style="color:red"/></hbox>
+					</row>
+					<row>
+						<label value="Status :" width="150px" />
+						<checkbox id="status" label="IsActive"
+							tabindex="2" />
+					</row>
+					<row>
+						<label value="Search Key :"  width="150px" />
+						<textbox id="key" sclass="textbox" tabindex="3" />
+					</row>
+				</rows>
+			</grid>
+			<button id="classSubmit" label="Submit"
+				sclass="submitButton" />
+		</div>
+		<div id="data" visible="false" height="100%">
+			<listbox id="detailListbox" height="100%"  mold="paging"
+				forward="onDoubleClick=detailListbox.onClassEdit"
+				emptyMessage="No class found in the result">
+				<listhead>
+					<listheader label="Class Name" hflex="min"/>
+					<listheader label="Status" hflex="1"/>
+					<listheader label="Search Key" hflex="1"/>
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.name}"></listcell>
+						<listcell label="${each.status}"></listcell>
+						<listcell label="${each.value}"></listcell>
+						<listcell>
+							<button
+								forward="onClick=detailListbox.onClassEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button
+								forward="onClick=detailListbox.onClassDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</zk>

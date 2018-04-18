@@ -1,0 +1,73 @@
+<zk>
+	<div apply="period_module.PeriodDetailController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div vflex="min" hflex="min" id="form">
+			<grid>
+				<columns>
+					<column hflex="min" />
+					<column hflex="1" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Period Id :" width="150px" />
+						<hbox><intbox id="pid" tabindex="1" disabled="true" sclass="textbox"/>
+						<label value="*" style="color:red"/></hbox>
+						
+					</row>
+					<row>
+						<label value="Period Month :" width="150px" />
+						<hbox>
+						<combobox id="pdmonth" tabindex="2"
+							autodrop="true" readonly="true" constraint="no empty">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+						<label value="*" style="color:red"/>
+						</hbox>
+					</row>
+					<row>
+						<label value="Status :" width="150px" />
+						<checkbox id="dstatus" label="IsActive"
+							tabindex="3" />
+					</row>
+					<row>
+						<label value="Search Key :" width="150px" />
+						<textbox id="dkey" tabindex="4" sclass="textbox"/>
+					</row>
+				</rows>
+			</grid>
+			<button label="Submit" sclass="submitButton" id="submit" />
+		</div>
+		<div id="data" visible="false" height="90%">
+			<listbox id="Listbox"
+				forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No user found in the result">
+				<listhead>
+					<listheader label="Period Name" />
+					<listheader label="Active" />
+					<listheader label="Search Key" />
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.month}"></listcell>
+						<listcell label="${each.d_status}"></listcell>
+						<listcell label="${each.d_value}"></listcell>
+						<listcell>
+							<button
+								forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button
+								forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</zk>

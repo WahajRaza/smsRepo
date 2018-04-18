@@ -1,0 +1,3 @@
+<div height="100%" apply="rep_mvc.Jasper" id="div">
+	<jasperreport id="report" />
+</div>

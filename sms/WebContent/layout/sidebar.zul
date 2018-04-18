@@ -1,0 +1,39 @@
+<zk>
+	<div id="container" sclass="vertical" apply="sidebar.SidebarAjaxbasedController">
+		<navbar id="navbar" orient="vertical" hflex="max" vflex="max"
+			visible="true" sclass="z-navbar-vertical">
+			<navitem label="Home" iconSclass="z-icon-home"
+				href="/sms/" />
+		<!-- 	<navitem label="Home" iconSclass="z-icon-home"
+				href="index.zul" />
+			<nav label="Setups" iconSclass="z-icon-home"
+				badgeText="4">
+				<navitem id="asa" label="Class"/>
+				<navitem label="Section"
+					href="master_entry/section.zul" />
+				<navitem label="Fee Type"
+					href="master_entry/fee-type.zul" />
+				<navitem label="Discount"
+					href="master_entry/discount.zul" />
+			</nav>
+			<nav label="Fee Module" iconSclass="z-icon-group"
+				badgeText="3">
+				<navitem label="Fee Master" href="index.zul" />
+				<navitem label="Fee Structure" href="index.zul" />
+				<navitem label="Fee Generation" href="index.zul" />
+			</nav>
+			<nav label="Student Module" iconSclass="z-icon-user"
+				badgeText="4">
+				<navitem label="Student Master" href="index.zul" />
+				<navitem label="Student Details" href="index.zul" />
+				<navitem label="Student Discount" href="index.zul" />
+				<navitem label="Student Fine" href="index.zul" />
+			</nav>
+			<nav label="Period Module" iconSclass="z-icon-star"
+				badgeText="2">
+				<navitem label="Academic Period" href="index.zul" />
+				<navitem label="Period Details" href="index.zul" />
+			</nav>-->
+		</navbar> 
+	</div>
+</zk>

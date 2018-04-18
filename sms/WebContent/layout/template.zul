@@ -1,0 +1,20 @@
+<zk>
+	<borderlayout hflex="1" vflex="1">
+		<north flex="true">
+			<apply templateURI="/layout/banner.zul"/>
+		</north>
+	<!-- create only when the currentUser is not an anonymous  -->
+		<if test="${not sessionScope.userCredential.anonymous}"> 
+		<west width="240px" border="normal" autoscroll="true" minsize="300" flex="true">
+			<apply templateURI="/layout/sidebar.zul"/>
+		</west>
+		</if> 
+		<center id="mainContent" autoscroll="true" vflex="1" hflex="1" border="none">
+			<!-- the main content will be insert to here -->
+			<apply template="center"/>
+		</center>
+		<south flex="true">
+			<apply templateURI="/layout/south.zul"/>
+		</south>
+	</borderlayout>
+</zk>

@@ -1,0 +1,76 @@
+<zk xmlns:x="xhtml">
+	<div apply="fee_module.FeeController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div id="form" vflex="min" hflex="min">
+			<grid>
+				<columns>
+					<column hflex="min" />
+					<column hflex="1" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Period " width="150px" />
+						<combobox id="fperiod" tabindex="1"
+							autodrop="true" readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<label value="Class " width="150px" />
+						<combobox id="fclass" tabindex="2"
+							autodrop="true" readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<label value="Status " width="150px" />
+						<hlayout>
+							<checkbox id="status" label="IsActive"
+								tabindex="3" />
+						</hlayout>
+					</row>
+					<row>
+						<label value="Search Key " width="150px" />
+							<textbox id="value" sclass="textbox" tabindex="4" />
+					</row>
+				</rows>
+			</grid>
+			<button label="Submit" sclass="submitButton" id="submit"/>
+		</div>
+		<div id="data" visible="false" height="90%">
+			<listbox id="Listbox" forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No user found in the result">
+				<listhead>
+					<listheader label="Period" />
+					<listheader label="Class" />
+					<listheader label="Active" />
+					<listheader label="Search Key" />
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.fperiod}"></listcell>
+						<listcell label="${each.fclass}"></listcell>
+						<listcell label="${each.status}"></listcell>
+						<listcell label="${each.value}"></listcell>
+						<listcell>
+							<button
+								forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button
+								forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+</zk>

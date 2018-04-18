@@ -1,0 +1,28 @@
+<zk xmlns:x="xhtml">
+	<style>
+		.nav_toolbar .z-toolbarbutton-content i { font-size: 20px;}
+		.nav_tabs .z-tabpanel { padding: 0; border-bottom: 0 none;}
+		.nav_tabs .z-tabpanels .z-toolbarbutton-content { padding: 4px;}
+		.nav_category { cursor:pointer; } .nav_text { color: #696569;
+		font-size : 24px; font-weight: bold;}
+	</style>
+	<tabbox width="100%" sclass="nav_tabs">
+		<tabs id="tabs">
+			<tab label="Fee Master" id="tab_fm"/>
+			<tab label="Fee Details" id="tab_fd"/>
+			<tab label="Fee Generation" id="tab_fg"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<include id="fm" src="/pages/fee_module/fee_master.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include id="fd" src="/pages/fee_module/fee_detail.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include id="fg" src="/pages/fee_module/fee_gen.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+	
+</zk>

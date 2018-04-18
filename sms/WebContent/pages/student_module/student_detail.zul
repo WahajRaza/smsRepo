@@ -1,0 +1,97 @@
+<zk>
+	<div apply="student_module.StudentDetailController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+		<div vflex="min" hflex="min" id="form">
+		<grid>
+			<columns>
+				<column hflex="min" />
+				<column hflex="1" />
+			</columns>
+			<rows>
+			<row>
+					<label value="Student Id" width="150px" />
+					<intbox id="sid" tabindex="1" disabled="true" sclass="textbox"/>
+				</row>
+				<row>
+					<label value="Roll Number" width="150px" />
+					<hbox>
+					<intbox id="roll_no" tabindex="2" sclass="textbox" constraint="no empty"/>
+					<label value="*" style="color:red" /></hbox>
+				</row>
+				<row>
+						<label value="Class :" width="150px" />
+						<combobox id="sdclass" tabindex="3"
+							autodrop="true" readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<label value="Section :" width="150px" />
+						<combobox id="sdsection" tabindex="4"
+							autodrop="true" readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+					<row>
+						<label value="Fee :" width="150px" />
+						<combobox id="sdfee" tabindex="5"
+							autodrop="true" readonly="true">
+							<template name="model">
+								<comboitem label="${each}" />
+							</template>
+						</combobox>
+					</row>
+				<row>
+					<label value="Status" width="150px" />
+					<checkbox id="dstatus" label="IsActive" tabindex="6" />
+				</row>
+				<row>
+					<label value="Search Key" width="150px" />
+					<textbox id="dvalue" tabindex="7" sclass="textbox"/>
+				</row>
+			</rows>
+		</grid>
+		<button label="Submit" sclass="submitButton" id="submit"/>
+	</div>
+<div id="data" visible="false" height="90%">
+			<listbox id="Listbox"
+				forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No user found in the result">
+				<listhead>
+					<listheader label="Roll Number" />
+					<listheader label="Class" />
+					<listheader label="Section" />
+					<listheader label="Fee" />
+					<listheader label="Active" />
+					<listheader label="Search Key" />
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.roll_no}"></listcell>
+						<listcell label="${each.class_id}"></listcell>
+						<listcell label="${each.section_id}"></listcell>
+						<listcell label="${each.fee_id}"></listcell>
+						<listcell label="${each.d_status}"></listcell>
+						<listcell label="${each.d_value}"></listcell>
+						<listcell>
+							<button
+								forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button
+								forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+		</div>
+</zk>

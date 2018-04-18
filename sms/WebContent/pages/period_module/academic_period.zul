@@ -1,0 +1,98 @@
+<zk>
+	<div apply="period_module.PeriodController">
+		<button id="toggle" iconSclass="z-icon-table" sclass="imgbutton"
+			tooltiptext="Grid Toggle" />
+		<button id="New" iconSclass="z-icon-file-text"
+			sclass="imgbutton" />
+			<label sclass="zspan" id="selected_id"></label>
+		<div id="form" vflex="min" hflex="min">
+			<grid>
+				<columns>
+					<column hflex="min" />
+					<column hflex="1" />
+				</columns>
+				<rows>
+					<row>
+						<label value="Period Year" />
+						<hbox>
+							<intbox id="name" sclass="textbox"
+								constraint="no negative,no empty" tabindex="1" maxlength="4"
+								placeholder="e.g: [YYYY]" />
+							<label value="*" style="color:red" />
+						</hbox>
+					</row>
+					<row>
+						<label value="No of Terms" />
+						<intbox id="terms" sclass="textbox" tabindex="2"
+							constraint="no negative" maxlength="2" />
+					</row>
+					<row>
+						<label value="No of Tests" />
+						<intbox id="tests" sclass="textbox" tabindex="3"
+							maxlength="3" constraint="no negative"/>
+					</row>
+					<row>
+						<label value="Start From" />
+						<hbox>
+							<datebox id="from" tabindex="4"
+								constraint="no empty" sclass="textbox"/>
+							<label value="*"
+								style="color:red;text-alignment:left" />
+						</hbox>
+					</row>
+					<row>
+						<label value="End In" />
+						<hbox>
+							<datebox id="to" tabindex="5"
+								constraint="no empty" sclass="textbox"/>
+							<label value="*" style="color:red" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Status" />
+						<checkbox id="status" label="IsActive"
+							tabindex="6" />
+					</row>
+					<row>
+						<label value="Search Key" />
+						<textbox id="key" sclass="textbox" tabindex="7" />
+					</row>
+				</rows>
+			</grid>
+			<button label="Submit" sclass="submitButton" id="submit" />
+		</div>
+		<div id="data" visible="false" height="90%">
+			<listbox id="Listbox" forward="onDoubleClick=Listbox.onEdit"
+				emptyMessage="No user found in the result">
+				<listhead>
+					<listheader label="Period Name" />
+					<listheader label="No Of Terms" />
+					<listheader label="No Of Tests" />
+					<listheader label="From" />
+					<listheader label="To" />
+					<listheader label="Active" />
+					<listheader label="Search Key" />
+					<listheader hflex="min" />
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell label="${each.name}"></listcell>
+						<listcell label="${each.terms}"></listcell>
+						<listcell label="${each.tests}"></listcell>
+						<listcell label="${each.from}"></listcell>
+						<listcell label="${each.to}"></listcell>
+						<listcell label="${each.status}"></listcell>
+						<listcell label="${each.value}"></listcell>
+						<listcell>
+							<button forward="onClick=Listbox.onEdit"
+								sclass="imgbutton edit" iconSclass="z-icon-pencil-square" />
+							<button forward="onClick=Listbox.onDelete"
+								sclass="imgbutton delete" iconSclass="z-icon-trash" />
+						</listcell>
+					</listitem>
+				</template>
+			</listbox>
+		</div>
+	</div>
+
+</zk>

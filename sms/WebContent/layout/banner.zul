@@ -1,0 +1,16 @@
+<div sclass="banner" hflex="1" vflex="1">
+	<hbox align="center" hflex="1" vflex="1">
+		<a href="/" hflex="min">
+			<image src="/imgs/blogo.png" sclass="banner-image" />
+		</a>
+		<div hflex="min">
+			<label value="School Management System" sclass="banner-head" />
+		</div>
+		<hbox apply="sm.LogoutController" hflex="1" vflex="1" pack="end" align="center" sclass="logoutContainer">
+			<label value="${sessionScope.userCredential.name}"
+				if="${not sessionScope.userCredential.anonymous}" sclass="logout"/>
+			<label id="logout" value="Logout"
+				if="${not sessionScope.userCredential.anonymous}" sclass="logout" />
+		</hbox>
+	</hbox>
+</div>
