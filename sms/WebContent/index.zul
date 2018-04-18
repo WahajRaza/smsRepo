@@ -5,7 +5,7 @@
 	<template name="layout" src="/layout/template.zul" />
 	<apply template="layout"/>
 	<template name="center">
-		<include id="mainInclude" src="/home.zul" />
+		<include id="mainInclude" src="/home.zul"/>
 	</template>
 </div>
 </zk>
